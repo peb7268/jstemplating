@@ -108,6 +108,6 @@ The `` _.tempate `` method accepts the template you want to use. It then returns
 The last thing you would do in this step would be to add the compiled template to the DOM.
 ``` $('#listing').append(html); ```
 
-Another popular approach that I really like is mustach.js. You can see how it would be implemented [here](https://github.com/peb7268/jstemplating/#mustache)
+Another popular approach that I really like is mustach.js. You can see how it would be implemented [here](https://github.com/peb7268/jstemplating/blob/master/mustache.md)
 
 

@@ -1,5 +1,6 @@
-```markdown
 #MustacheJS Templating
+
+```markdown
 
 require(["global"], function() {
     	
