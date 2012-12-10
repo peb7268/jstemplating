@@ -85,8 +85,29 @@ the function callback here will not execute until all of those scripts are loade
 
 Items defined as dependencies in the first param of define / require can be referenced in the callback function as arguments. These are expected to be referenced in the callback in the order in which they were set in the dependency.
 
-## 2) //a 
+## 2) 
+//a 
 The first example uses the underscore.js library for templating. I considered this to be the framework of choice for a lot of projects im thinking of using 
 going forward since it is a hard dependency of backbone.js anyway. No sense in loading extra needless stuff. I do like the templating syntax of mustache better though and since laravel uses it too for blade I figured the first step would be just converting the `` <%= `` notation that is default to the `` {{ myvar }} `` syntax that mustache and laravel use.
 
 //b
+The second thing we do is grab the inline template from index.php
+
+//c
+The third step and fourth step I combined into one. This step is the heart of the templating approach.
+`` var html 	 = _.template(source, resp); ``
+The `` _.tempate `` method accepts the template you want to use. It then returns a function that you can reuse for compilation of data. If you pass the `` _.tempate ``a second paramater of data it will immediately compile and just return the results of the compilation instead of a method. This is what we did in this case. If you wanted to do it with the 2 step approach ( in case you wanted to reuse the compiler template ) then you would do: 
+
+```markdown  
+	
+	var compiler = _.tempate(source);
+	var html 	 = compiler(resp);
+
+```
+
+The last thing you would do in this step would be to add the compiled template to the DOM.
+``` $('#listing').append(html); ```
+
+Another popular approach that I really like is mustach.js. You can see how it would be implemented [here](https://github.com/peb7268/jstemplating/#mustache)
+
+
